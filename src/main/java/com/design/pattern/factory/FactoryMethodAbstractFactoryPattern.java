@@ -8,6 +8,6 @@ package com.design.pattern.factory;
  */
 public class FactoryMethodAbstractFactoryPattern{
     public static void main(String[] args){
-        // TODO: 2022/4/25 待实现演示，思考如何实践这2种模式以及 
+        // TODO: 2022/4/25 待实现演示，思考如何实践这2种模式以及结合实践
     }
 }
