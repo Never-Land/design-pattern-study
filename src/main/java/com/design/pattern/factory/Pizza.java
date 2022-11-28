@@ -1,22 +1,40 @@
 package com.design.pattern.factory;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 /**
  * 不同口味抽象披萨
  */
-@Getter
-@Setter
+@Data
 public abstract class Pizza{
     /**
      * 披萨名称
      */
-    private String name;
+    String name;
     /**
-     * 制作披萨原料
+     * 面团
      */
-    // TODO: 2022/4/26 待实现
+    Dough dough;
+    /**
+     * 调味汁
+     */
+    Sauce sauce;
+    /**
+     * 素食
+     */
+    Veggies[] veggies;
+    /**
+     * 干酪
+     */
+    Cheese cheese;
+    /**
+     * 辣香肠
+     */
+    Pepperoni pepperoni;
+    /**
+     * 蛤蜊
+     */
+    Clam clam;
 
     /**
      * 制作披萨材料准备
@@ -43,37 +61,37 @@ public abstract class Pizza{
 
     @Override
     public String toString(){
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("---- " + this.name + " ----\n");
-        /*if (dough != null) {
-            StringBuilder.append(dough);
-            StringBuilder.append("\n");
+        StringBuilder result = new StringBuilder();
+        result.append("---- ").append(name).append(" ----\n");
+        if(dough != null){
+            result.append(dough);
+            result.append("\n");
         }
-        if (sauce != null) {
-            StringBuilder.append(sauce);
-            StringBuilder.append("\n");
+        if(sauce != null){
+            result.append(sauce);
+            result.append("\n");
         }
-        if (cheese != null) {
-            StringBuilder.append(cheese);
-            StringBuilder.append("\n");
+        if(cheese != null){
+            result.append(cheese);
+            result.append("\n");
         }
-        if (veggies != null) {
-            for (int i = 0; i < veggies.length; i++) {
-                StringBuilder.append(veggies[i]);
-                if (i < veggies.length-1) {
-                    StringBuilder.append(", ");
+        if(veggies != null){
+            for(int i = 0; i < veggies.length; i++){
+                result.append(veggies[i]);
+                if(i < veggies.length - 1){
+                    result.append(", ");
                 }
             }
-            StringBuilder.append("\n");
+            result.append("\n");
         }
-        if (clam != null) {
-            StringBuilder.append(clam);
-            StringBuilder.append("\n");
+        if(clam != null){
+            result.append(clam);
+            result.append("\n");
         }
-        if (pepperoni != null) {
-            StringBuilder.append(pepperoni);
-            StringBuilder.append("\n");
-        }*/
-        return stringBuilder.toString();
+        if(pepperoni != null){
+            result.append(pepperoni);
+            result.append("\n");
+        }
+        return result.toString();
     }
 }

@@ -1,5 +1,7 @@
 package com.design.pattern.factory;
 
+import com.design.pattern.enums.PizzaTypeEnum;
+
 /**
  * 工厂方法、抽象工厂模式演示
  * 制作不同地区口味的披萨，为了防止制作的披萨偷工减料，店铺制作披萨
@@ -8,6 +10,14 @@ package com.design.pattern.factory;
  */
 public class FactoryMethodAbstractFactoryPattern{
     public static void main(String[] args){
-        // TODO: 2022/4/25 待实现演示，思考如何实践这2种模式以及结合实践
+        //纽约披萨商店
+        PizzaStore newYorkPizzaStore = new NewYorkPizzaStore();
+        System.out.println(newYorkPizzaStore.orderPizza(PizzaTypeEnum.CHEESE.getTypeCode()));
+        System.out.println(newYorkPizzaStore.orderPizza(PizzaTypeEnum.CLAM.getTypeCode()));
+
+        //芝加哥商店
+        PizzaStore chicagoPizzaStore = new ChicagoPizzaStore();
+        System.out.println(chicagoPizzaStore.orderPizza(PizzaTypeEnum.PEPPERONI.getTypeCode()));
+        System.out.println(chicagoPizzaStore.orderPizza(PizzaTypeEnum.VEGGIE.getTypeCode()));
     }
 }

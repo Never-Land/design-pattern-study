@@ -5,7 +5,27 @@ package com.design.pattern.factory;
  */
 public interface PizzaIngredientsFactory{
     /**
-     * 创造制作披萨的原料
+     * 制作面团
      */
-    // TODO: 2022/4/26 待实现
+    Dough createDough();
+    /**
+     * 制作调味汁
+     */
+    Sauce createSauce();
+    /**
+     * 制作干酪
+     */
+    Cheese createCheese();
+    /**
+     * 制作素食
+     */
+    Veggies[] createVeggies();
+    /**
+     * 制作辣香肠
+     */
+    Pepperoni createPepperoni();
+    /**
+     * 制作蛤蜊
+     */
+    Clam createClam();
 }
